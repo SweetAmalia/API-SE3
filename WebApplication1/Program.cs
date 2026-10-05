@@ -1,13 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Data;
+using WebApplication1.Features.Students;
+using WebApplication1.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Datalaag (SQL Server)
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Registreer je Student Service
+builder.Services.AddScoped<IStudentService, StudentService>();
+
 var app = builder.Build();
 
-// Configure middleware pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -16,7 +25,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-app.MapControllers();
+// Map de Minimal API endpoints voor studenten
+app.MapStudentEndpoints();
 
 app.Run();
