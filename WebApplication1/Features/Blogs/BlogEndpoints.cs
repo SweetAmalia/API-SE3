@@ -2,9 +2,9 @@ using WebApplication1.Models.Dtos;
 using WebApplication1.Services;
 namespace WebApplication1.Features.Blogs;
 
-public class BlogEndpoints
+public static class BlogEndpoints
 {
-    public void MapBlogEndpoints(WebApplication app)
+    public static void MapBlogEndpoints(this WebApplication app)
     {
         var group = app.MapGroup("/api/blogs");
 

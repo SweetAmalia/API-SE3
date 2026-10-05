@@ -4,9 +4,9 @@ using WebApplication1.Services;
 namespace WebApplication1.Features.Projects;
 
 
-public class ProjectEndpoints 
+public static class ProjectEndpoints 
 {
-    public void MapProjectEndpoints(WebApplication app)
+    public static void MapProjectEndpoints(this WebApplication app)
     {
         var group = app.MapGroup("/api/projects");
 
