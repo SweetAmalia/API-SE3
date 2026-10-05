@@ -14,7 +14,7 @@ Setup repo on any device by following the next steps:
 To make everything work probably and allow for testing, I use Swagger. 
 You can add swagger through NuGet Package: Swashbuckle.AspNetCore
 
-Make sure you have all the latest versions of the programs/extensions (You can check that by opening the IbApplication1.csproj file and it should list all with the correct version.).
+Make sure you have all the latest versions of the programs/extensions (You can check that by opening the WebApplication1.csproj file and it should list all with the correct version.).
 
 I use the Minimal API within the projects which allows for a less complicated and more structural option in comparison with Controllers. 
 The main reason for choosing Minimal API comes down to the application I am working on, I am simply using this to make my website portfolio better
