@@ -33,8 +33,7 @@ Now I have given enough information about each element within the project, I als
 My Code structure is as following:
 - `WebApplication1`: The central project where all the configurations, dependency injections and endpoints are defined.
 - `Data`: Contains the Database context and configuration for the Entity Framwork core / SQL Server. 
-- `Features`: Includes all the endpoints and services for the project. 
-- `Models/`: Has all the needed DTOs (Data Transfer Objects) and Entities for the project.
+- `Features`: Includes all the endpoints, services and DTOs (Data Transfer Objects) and Entities for the project. 
 
 Once all the above is sorted out it's pretty straightforward work.
 - Clone the repository
