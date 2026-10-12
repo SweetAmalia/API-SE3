@@ -3632,31 +3632,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lingh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Amalia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lingh\\Documents\\GitHub\\API-SE3\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Amalia\\Documents\\Website Portfolio\\Backend\\API-SE3\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\lingh\\Documents\\GitHub\\API-SE3\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\lingh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lingh\\Documents\\GitHub\\API-SE3\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\Amalia\\Documents\\Website Portfolio\\Backend\\API-SE3\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Amalia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amalia\\Documents\\Website Portfolio\\Backend\\API-SE3\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Amalia\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
