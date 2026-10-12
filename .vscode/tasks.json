@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "sqlproj: Build SQLEXPRESS01",
+			"type": "process",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"c:/Users/Amalia/Documents/Website Portfolio/Backend/API-SE3/SQLEXPRESS01/SQLEXPRESS01.sqlproj"
+			],
+			"problemMatcher": "$sqlproj-problem-matcher",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Builds the SQLEXPRESS01 SQL project"
+		}
+	]
+}
