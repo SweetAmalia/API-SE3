@@ -27,20 +27,20 @@ public static class BlogEndpoints
         {
             var created = await service.CreateAsync(dto);
             return Results.Created($"/api/blogs/{created.Id}", created);
-        });
+        }).RequireAuthorization("RequireEditorOrAdminRole");
 
         // PUT: Blog wijzigen
         group.MapPut("/{id:int}", async (int id, UpsertBlogDto dto, IBlogService service) =>
         {
             var success = await service.UpdateAsync(id, dto);
             return success ? Results.NoContent() : Results.NotFound();
-        });
+        }).RequireAuthorization("RequireEditorOrAdminRole");
 
         // DELETE: Blog verwijderen
         group.MapDelete("/{id:int}", async (int id, IBlogService service) =>
         {
             var success = await service.DeleteAsync(id);
             return success ? Results.NoContent() : Results.NotFound();
-        });
+        }).RequireAuthorization("RequireEditorOrAdminRole")   ;
     }
 }

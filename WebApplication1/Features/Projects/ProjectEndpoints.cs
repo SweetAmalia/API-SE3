@@ -29,20 +29,20 @@ public static class ProjectEndpoints
         {
             var created = await service.CreateAsync(dto);
             return Results.Created($"/api/projects/{created.Id}", created);
-        });
+        }).RequireAuthorization("RequireEditorOrAdminRole");
 
         // PUT: Project wijzigen
         group.MapPut("/{id:int}", async (int id, UpsertProjectDto dto, IProjectService service) =>
         {
             var success = await service.UpdateAsync(id, dto);
             return success ? Results.NoContent() : Results.NotFound();
-        });
+        }).RequireAuthorization("RequireEditorOrAdminRole");
 
         // DELETE: Project verwijderen
         group.MapDelete("/{id:int}", async (int id, IProjectService service) =>
         {
             var success = await service.DeleteAsync(id);
             return success ? Results.NoContent() : Results.NotFound();
-        });
-    }
+        }).RequireAuthorization("RequireEditorOrAdminRole");
+        }
 }
