@@ -46,7 +46,7 @@ public class AuthTests : IClassFixture<CustomWebApplicationFactory>
     }
 
     [Fact]
-    public async Task Login_ValidCredentialsReturnsOkAbdSetsAuthCookie()
+    public async Task Login_ValidCredentialsReturnsOkAndSetsAuthCookie()
     {
         // Arrange
         using var client = _factory.CreateClient(
