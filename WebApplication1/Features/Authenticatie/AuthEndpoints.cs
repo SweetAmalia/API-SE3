@@ -3,8 +3,6 @@ using System.Security.Claims;
 
 namespace WebApplication1.Features.Authenticatie;
 
-public sealed record PromoteGastDto(string Email);
-
 public static class AuthEndpoints
 {
     public static void MapAuthEndpoints(this IEndpointRouteBuilder app)
