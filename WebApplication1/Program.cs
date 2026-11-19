@@ -17,9 +17,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // ASP.NET Core Identity API
-builder.Services.AddIdentityApiEndpoints<IdentityUser>()
-.AddRoles<IdentityRole>()
-.AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 // Cookies configureren zodat we 401 Unauthorized en 403 Forbidden teruggeven in plaats van redirects naar login pagina's
 builder.Services.ConfigureApplicationCookie(options =>
@@ -38,7 +38,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 // RBAC Policy Noteren
 builder.Services.AddAuthorizationBuilder()
-.AddPolicy("RequireEditorOrAdmin", policy => policy.RequireRole("Editor", "Admin"));
+.AddPolicy("RequireEditorOrAdmin", policy => policy.RequireRole("Editor", "Admin"))
+.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
 
 // Registreer je Services
 builder.Services.AddScoped<IProjectService, ProjectService>();
@@ -53,6 +54,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Map de Minimal API endpoints voor Projecten, Blogs en Authenticatie
 app.MapAuthEndpoints();
